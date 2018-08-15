@@ -3,11 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2000
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gratify.API", "Gratify.API\Gratify.API.csproj", "{B424B231-B846-43EB-8221-DC0A4CCD8670}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gratify.Domain", "Gratify.Models\Gratify.Domain.csproj", "{D52B8C22-AEAD-42C1-AF98-138755EFD533}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gratify.Models", "Gratify.Models\Gratify.Models.csproj", "{D52B8C22-AEAD-42C1-AF98-138755EFD533}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gratify.Repository", "Gratify.Repository\Gratify.Repository.csproj", "{AF453753-894B-4240-A3C7-D85A886309FE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gratify.UI", "Gratify.UI\Gratify.UI.csproj", "{B36D3CE8-F8F7-4EB5-9DD1-6C40C9793AA0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gratify.Tests", "Gratify.Tests\Gratify.Tests.csproj", "{26D1E409-9B75-48A3-84CA-948099AFB52E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gratify.API", "Gratify.API\Gratify.API.csproj", "{A6BBFF12-84FB-486C-9C72-332EBB4D6643}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gratify.Business", "Gratify.Business\Gratify.Business.csproj", "{E198FDE5-458C-4556-B850-828D0C411DCF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,18 +19,26 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{B424B231-B846-43EB-8221-DC0A4CCD8670}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B424B231-B846-43EB-8221-DC0A4CCD8670}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B424B231-B846-43EB-8221-DC0A4CCD8670}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B424B231-B846-43EB-8221-DC0A4CCD8670}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D52B8C22-AEAD-42C1-AF98-138755EFD533}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D52B8C22-AEAD-42C1-AF98-138755EFD533}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D52B8C22-AEAD-42C1-AF98-138755EFD533}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D52B8C22-AEAD-42C1-AF98-138755EFD533}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B36D3CE8-F8F7-4EB5-9DD1-6C40C9793AA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B36D3CE8-F8F7-4EB5-9DD1-6C40C9793AA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B36D3CE8-F8F7-4EB5-9DD1-6C40C9793AA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B36D3CE8-F8F7-4EB5-9DD1-6C40C9793AA0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF453753-894B-4240-A3C7-D85A886309FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF453753-894B-4240-A3C7-D85A886309FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF453753-894B-4240-A3C7-D85A886309FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF453753-894B-4240-A3C7-D85A886309FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26D1E409-9B75-48A3-84CA-948099AFB52E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26D1E409-9B75-48A3-84CA-948099AFB52E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26D1E409-9B75-48A3-84CA-948099AFB52E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26D1E409-9B75-48A3-84CA-948099AFB52E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6BBFF12-84FB-486C-9C72-332EBB4D6643}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6BBFF12-84FB-486C-9C72-332EBB4D6643}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6BBFF12-84FB-486C-9C72-332EBB4D6643}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6BBFF12-84FB-486C-9C72-332EBB4D6643}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E198FDE5-458C-4556-B850-828D0C411DCF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E198FDE5-458C-4556-B850-828D0C411DCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E198FDE5-458C-4556-B850-828D0C411DCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E198FDE5-458C-4556-B850-828D0C411DCF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

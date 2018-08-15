@@ -9,12 +9,15 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.App" Version="2.1.0-preview2-final" />
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.0-preview2-final" />
+    <PackageReference Include="AutoMapper" Version="7.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.1.1" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Gratify.Models\Gratify.Models.csproj" />
+    <ProjectReference Include="..\Gratify.Business\Gratify.Business.csproj" />
+    <ProjectReference Include="..\Gratify.Models\Gratify.Domain.csproj" />
+    <ProjectReference Include="..\Gratify.Repository\Gratify.Repository.csproj" />
   </ItemGroup>
 
 </Project>

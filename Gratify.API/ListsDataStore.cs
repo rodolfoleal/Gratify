@@ -1,4 +1,4 @@
-﻿using Gratify.Models;
+﻿using Gratify.Domain;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,25 +10,25 @@ namespace Gratify.API
     {
         public static ListsDataStore Current { get; } = new ListsDataStore();
 
-        public List<List> Lists { get; set; }
+        public List<WishList> Lists { get; set; }
 
         public ListsDataStore()
         {
-            Lists = new List<List>()
+            Lists = new List<WishList>()
             {
-                new List()
+                new WishList()
                 {
                     Id = 1,
                     Name = "Lista teste 1",
                     Description="primeira list ade teste"
                 },
-                new List()
+                new WishList()
                 {
                     Id = 2,
                     Name = "Lista teste 2",
                     Description="segunda lista teste"
                 },
-                new List()
+                new WishList()
                 {
                     Id = 3,
                     Name = "Lista teste 3",
