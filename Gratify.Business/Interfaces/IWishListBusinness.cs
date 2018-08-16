@@ -2,7 +2,7 @@
 
 namespace Gratify.Business
 {
-    public interface IWishListBusinesss : IGenericBusiness<WishList>
+    public interface IWishListBusiness : IGenericBusiness<WishList>
     {
     }
 }

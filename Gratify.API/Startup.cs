@@ -32,8 +32,8 @@ namespace Gratify.API
         {
             services.AddDbContext<GratifyDbContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"), b => b.MigrationsAssembly("Gratify.API")));
-            services.AddTransient<IWishListBusinesss, WishListBusiness>();
-            services.AddTransient<IItemBusinesss, ItemBusiness>();
+            services.AddTransient<IWishListBusiness, WishListBusiness>();
+            services.AddTransient<IItemBusiness, ItemBusiness>();
             services.AddTransient<IUserBusinesss, UserBusiness>();
             services.AddTransient<IWishListRepository, WishListRepository>();
             services.AddTransient<IItemRepository, ItemRepository>();

@@ -11,9 +11,9 @@ namespace Gratify.API.Controllers
     [Route("api/lists")]
     public class WishListsController : Controller
     {
-        private IWishListBusinesss _wishListBusiness;
+        private IWishListBusiness _wishListBusiness;
 
-        public WishListsController(IWishListBusinesss wishListBusiness)
+        public WishListsController(IWishListBusiness wishListBusiness)
         {
             _wishListBusiness = wishListBusiness;
         }
@@ -29,10 +29,18 @@ namespace Gratify.API.Controllers
             return Ok(wishList);
         }
 
-        [HttpGet("{id}")]
-        public async Task<IActionResult> GetWishLists(int id)
+        [HttpGet("{listId}")]
+        public async Task<IActionResult> GetWishLists(int listId)
         {
-            return new JsonResult(await _wishListBusiness.GetAsync(id));
+            var wishList = await _wishListBusiness.Query()
+                .Include(w => w.Items)
+                .Include(w => w.Owner)
+                .FirstOrDefaultAsync(w => w.Id == listId);
+
+            if (wishList == null)
+                return NotFound();
+
+            return new JsonResult(wishList);
         }
 
         [HttpPost]
@@ -44,26 +52,26 @@ namespace Gratify.API.Controllers
             return Created($"api/lists/{wishList.Id}", wishList);
         }
 
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutWishList(int id, [FromBody] WishList wishList)
+        [HttpPut("{listId}")]
+        public async Task<IActionResult> PutWishList(int listId, [FromBody] WishList wishList)
         {
-            if (await _wishListBusiness.GetAsync(id) == null)
+            if (await _wishListBusiness.GetAsync(listId) == null)
                 return NotFound();
 
-            wishList.Id = id;
+            wishList.Id = listId;
 
             await _wishListBusiness.UpdateAsync(wishList);
 
             return NoContent();
         }
 
-        [HttpPatch("{id}")]
-        public async Task<IActionResult> PatchWishList(int id, [FromBody] JsonPatchDocument<WishList> patchDoc)
+        [HttpPatch("{listId}")]
+        public async Task<IActionResult> PatchWishList(int listId, [FromBody] JsonPatchDocument<WishList> patchDoc)
         {
             if (patchDoc == null)
                 return BadRequest();
 
-            var wishlistEntity = await _wishListBusiness.GetAsync(id);
+            var wishlistEntity = await _wishListBusiness.GetAsync(listId);
             if (wishlistEntity == null)
                 return NotFound();
 
