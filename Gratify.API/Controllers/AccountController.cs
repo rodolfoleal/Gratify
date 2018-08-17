@@ -42,8 +42,10 @@ namespace Gratify.API.Controllers
                 var appUser = _userManager.Users.SingleOrDefault(r => r.Email == model.Email);
                 return await GenerateJwtToken(model.Email, appUser);
             }
-
-            throw new ApplicationException("INVALID_LOGIN_ATTEMPT");
+            else
+            {
+                return BadRequest(result);
+            }
         }
 
         [HttpPost]
@@ -62,10 +64,12 @@ namespace Gratify.API.Controllers
                 return await GenerateJwtToken(model.Email, user);
             }
 
-            var exception = new ApplicationException(result.Errors.ToString());
-            exception.Data.Add("Errors", result.Errors);
+            foreach (var identityErrors in result.Errors)
+            {
+                ModelState.AddModelError(identityErrors.Code, identityErrors.Description);
+            }
 
-            throw exception;
+            return BadRequest(ModelState);
         }
 
         private async Task<object> GenerateJwtToken(string email, User user)
