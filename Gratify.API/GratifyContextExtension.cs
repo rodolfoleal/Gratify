@@ -37,7 +37,7 @@ namespace Gratify.API
                     {   Name = "Test User",
                         Email = "test@gmail.com",
                         Bio = "Olá usuário de teste 1",
-                        Username = "testuser"
+                        UserName = "testuser"
                     }
                 },
                 new WishList()
@@ -60,7 +60,7 @@ namespace Gratify.API
                     {   Name = "Usuario 2",
                         Email = "ususario2@gmail.com",
                         Bio = "Olá usuário de usuario2",
-                        Username = "usuario2"
+                        UserName = "usuario2"
                     }
                 },
                 new WishList()
@@ -83,7 +83,7 @@ namespace Gratify.API
                     {   Name = "Joao",
                         Email = "joa@gmail.com",
                         Bio = "Olá biografia de joao",
-                        Username = "joaouser"
+                        UserName = "joaouser"
                     }
                 }
             };

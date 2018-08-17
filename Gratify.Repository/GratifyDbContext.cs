@@ -1,9 +1,11 @@
 ﻿using Gratify.Domain;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace CrossSolar.Repository
 {
-    public class GratifyDbContext : DbContext
+    public class GratifyDbContext : IdentityDbContext
     {
         public GratifyDbContext()
         {
@@ -11,15 +13,13 @@ namespace CrossSolar.Repository
 
         public GratifyDbContext(DbContextOptions<GratifyDbContext> options) : base(options)
         {
-            Database.EnsureCreated();
         }
 
         public DbSet<WishList> WishLists { get; set; }
 
         public DbSet<Item> Items { get; set; }
 
-        public DbSet<User> Users { get; set; }
-
+        public new DbSet<User> Users { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

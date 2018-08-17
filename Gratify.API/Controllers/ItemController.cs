@@ -21,7 +21,7 @@ namespace Gratify.API.Controllers
             _itemBusiness = itemBusiness;
         }
 
-        [HttpGet("{listId}/items}")]
+        [HttpGet("{listId}/items")]
         public async Task<IActionResult> GetItems(int listId)
         {
             if (await _wishListBusiness.GetAsync(listId) == null)
