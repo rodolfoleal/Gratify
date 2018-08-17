@@ -42,7 +42,7 @@ namespace Gratify.API
             options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"), b => b.MigrationsAssembly("Gratify.API")));
 
             //Register Injections
-            services.AddSingleton<IConfiguration>(Configuration);
+            services.AddSingleton(Configuration);
             services.AddTransient<IWishListBusiness, WishListBusiness>();
             services.AddTransient<IItemBusiness, ItemBusiness>();
             services.AddTransient<IUserBusinesss, UserBusiness>();
