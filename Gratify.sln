@@ -9,9 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gratify.Repository", "Grati
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gratify.Tests", "Gratify.Tests\Gratify.Tests.csproj", "{26D1E409-9B75-48A3-84CA-948099AFB52E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gratify.API", "Gratify.API\Gratify.API.csproj", "{A6BBFF12-84FB-486C-9C72-332EBB4D6643}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gratify.API", "Gratify.API\Gratify.API.csproj", "{A6BBFF12-84FB-486C-9C72-332EBB4D6643}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gratify.Business", "Gratify.Business\Gratify.Business.csproj", "{E198FDE5-458C-4556-B850-828D0C411DCF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gratify.Blazor.UI", "Gratify.Blazor.UI\Gratify.Blazor.UI.csproj", "{8B7E65EC-0035-471F-A0FD-D60AE82B8C52}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{E198FDE5-458C-4556-B850-828D0C411DCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E198FDE5-458C-4556-B850-828D0C411DCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E198FDE5-458C-4556-B850-828D0C411DCF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B7E65EC-0035-471F-A0FD-D60AE82B8C52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B7E65EC-0035-471F-A0FD-D60AE82B8C52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B7E65EC-0035-471F-A0FD-D60AE82B8C52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B7E65EC-0035-471F-A0FD-D60AE82B8C52}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
